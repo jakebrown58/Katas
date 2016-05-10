@@ -8,23 +8,23 @@
 
 manu.txt -> the text manuscript.  format is:
 
-  --------------------
-  Entry Title
-  --------------------
+  `--------------------`
+  `Entry Title`
+  `--------------------`
 
-  Entry Body
+  `Entry Body`
 
-  --------------------
-  Entry 2 Title
-  --------------------
+  `--------------------`
+  `Entry 2 Title`
+  `--------------------`
 
-  Enrty Body 2
+  `Enrty Body 2`
 
 templ.html -> the temlpate.
 
 Looks for tags like
 
- **title**
- **text**
- **prev**
- **next**
+ `**title**`
+ `**text**`
+ `**prev**`
+ `**next**`
