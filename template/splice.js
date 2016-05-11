@@ -50,7 +50,7 @@ var main = function() {
 
   if(process.argv.length > 2) {
     count = process.argv[2];
-    countp1 = parseInt(count, 10) + 1;cd
+    countp1 = parseInt(count, 10) + 1;
   }
 
   _.each(pages, function(page) {
