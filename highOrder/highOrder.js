@@ -380,3 +380,73 @@ function pluck(mappable, key) {
 function pluckWith(key, mappable) {
 	return pluck(mappable, key);
 }
+
+
+/*
+var Jimp = require('Jimp');
+
+var input = Jimp.read("./in2.jpg", function (err, image) {
+	boxate(image);
+});
+
+var boxate = function(image) {
+	let boxSize = 4;
+	let boxSize2 = boxSize * boxSize;
+	let xBoxes = image.bitmap.width / boxSize;
+	let yBoxes = image.bitmap.height / boxSize;
+	
+	var img2 = new Jimp(Math.ceil(xBoxes), Math.ceil(yBoxes), function(err, image) {});
+
+	for(let xx = 0; xx < xBoxes; xx++) {
+		for(let yy = 0; yy < yBoxes; yy++) {
+			let colorR = 0;
+			let colorG = 0;
+			let colorB = 0;
+			for(let x = 0; x < boxSize; x++) {
+				for(let y = 0; y < boxSize; y++) {
+					let localX = xx * boxSize + x;
+					let localY = yy * boxSize + y;
+					let color = Jimp.intToRGBA(image.getPixelColor(localX,localY));
+					colorR += color.r;
+					colorG += color.g;
+					colorB += color.b;
+				}
+			}
+			colorR = colorR / boxSize2;
+			colorG = colorG / boxSize2;
+			colorB = colorB / boxSize2;
+
+			if(colorG > 125 && colorB > 125 && colorR > 125) {
+				colorR = 205;
+				colorG = 205;
+				colorB = 205;
+			}
+			else if(colorG > colorB) {
+				if(colorR > 70) {
+					colorG = 180;
+				 	colorB = 0;
+			 		colorR = 130;					
+				}
+				else if(colorG > colorR * 1.5) {
+					colorG = 170;
+				 	colorB = 30;
+			 		colorR = 40;		
+			 	} 
+			 	else {
+					colorG = 90;
+				 	colorB = 70;
+			 		colorR = 70;		
+			 	}
+			}
+			else if(colorB > colorG && colorB > colorR) {
+				colorB = 250;
+				colorG = 10;
+				colorR = 0;
+			}
+
+			img2.setPixelColor(Jimp.rgbaToInt(colorR, colorG, colorB, 255), xx, yy);
+		}
+	}
+	img2.write('./test3.png');
+};
+*/
